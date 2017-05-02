@@ -1,6 +1,6 @@
 module.exports = {
   jwtSecret: 'CaPtAiNPrIcE',
-  database: 'mongodb://localhost:27017/gaming_square',
+  database: 'mongodb://192.168.250.86:27777/gaming_square',
   saltRounds: 10,
   serverPort: 3000
 };
