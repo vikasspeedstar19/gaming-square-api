@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 exports.get_error_handler = function(res, err, data){
-    	if(!err){
+    if(!err){
 	res.json(data);	
 	}
 	else{

@@ -35,38 +35,38 @@ exports.postGamingSquareMainList = function(req,res){
 
 
 exports.getGamingSquareMainList = function(req, res){
-    GamingSquareMainListModel.find({},function(err, data){
+    GamingSquareMainListModel.find({},{"_id":false},function(err, data){
          error_handle.get_error_handler(res, err, data);
     });
 }
 
 exports.getGamingSquareMainSortedList = function(req, res){
     
-GamingSquareMainListModel.find({}).sort({"game_release_date":-1}).exec(function(err, data){
+GamingSquareMainListModel.find({},{"_id":false}).sort({"game_release_date":-1}).exec(function(err, data){
 	error_handle.get_error_handler(res, err, data);	
 });
 }
 
 exports.getGamingSquareTop100List = function(req, res){
 	
-GamingSquareMainListModel.find({}).sort({"game_rating":-1}).limit(10).exec(function(err, data){
+GamingSquareMainListModel.find({},{"_id":false}).sort({"game_rating":-1}).limit(10).exec(function(err, data){
         error_handle.get_error_handler(res, err, data);
 });	
 }
 
 exports.getGamingSquareExclusivePCList = function(req, res){
-GamingSquareMainListModel.find({$and:[{"game_platforms.XBOX":false},{"game_platforms.PS":false},{"game_platforms.PC":true}]},function(err,data){
+GamingSquareMainListModel.find({$and:[{"game_platforms.XBOX":false},{"game_platforms.PS":false},{"game_platforms.PC":true}]},{"_id":false},function(err,data){
 	error_handle.get_error_handler(res, err, data);
 });
 }
 
 exports.getGamingSquareExclusivePSList = function(req, res){
-GamingSquareMainListModel.find({$and:[{"game_platforms.PC":false},{"game_platforms.PS":true},{"game_platforms.XBOX":false}]},function(err,data){            error_handle.get_error_handler(res, err, data);
+GamingSquareMainListModel.find({$and:[{"game_platforms.PC":false},{"game_platforms.PS":true},{"game_platforms.XBOX":false}]},{"_id":false},function(err,data){error_handle.get_error_handler(res, err, data);
 });
 }
 
 exports.getGamingSquareExclusiveXBOXList = function(req, res){
-GamingSquareMainListModel.find({$and:[{"game_platforms.PC":false},{"game_platforms.PS":false},{"game_platforms.XBOX":true}]},function(err,data){            error_handle.get_error_handler(res, err, data);
+GamingSquareMainListModel.find({$and:[{"game_platforms.PC":false},{"game_platforms.PS":false},{"game_platforms.XBOX":true}]},{"_id":false},function(err,data){            error_handle.get_error_handler(res, err, data);
 });
 }
 

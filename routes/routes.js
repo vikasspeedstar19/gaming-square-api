@@ -3,6 +3,7 @@ var app = express.Router();
 var auth = require('../controllers/test.controller');
 var gamingSquareMainList = require('../controllers/gaming_square_main_list_controller');
 var gamingSquareSearchList = require('../controllers/gaming_square_game_search');
+var gamingSquareGameInfo = require('../controllers/gaming_square_game_info_controller');
 
 //gaming_square_game_search
 
@@ -19,5 +20,12 @@ app.post('/postgamingsquaremainlist',gamingSquareMainList.postGamingSquareMainLi
 app.post('/deletegaminggquaremainlist',gamingSquareMainList.deleteGamingSquareMainList);
 
 app.post('/getgamingsquaregamesearchlist',gamingSquareSearchList.gamingSquareGameSearch);
+
+app.post('/getgamingsquaregameinfoinfo',gamingSquareGameInfo.gamingSquareGameInfo);
+app.post('/getgamingsquaregameinfooverview',gamingSquareGameInfo.gamingSquareGameOverview);
+app.post('/getgamingsquaregameinfostory',gamingSquareGameInfo.gamingSquareGameStory);
+app.post('/getgamingsquaregameinfoextra',gamingSquareGameInfo.gamingSquareGameExtra);
+app.post('/getgamingsquaregameinforatings',gamingSquareGameInfo.gamingSquareGameRatings);
+app.post('/getgamingsquaregameinfoscreenshots',gamingSquareGameInfo.gamingSquareGameScreenshots);
 
 module.exports = app;
