@@ -11,7 +11,12 @@ var error_handle = require('../error_handler/error_handler');
 
 exports.gamingSquareGameSearch = function(req, res){
 	console.log("The Input is : ",req.body.game_name);
+	if(req.body.game_name.length == 0){
+		res.send("Invalid Input");
+	}
+	else{
 	GamingSquareMainListModel.find({"game_name": new RegExp(req.body.game_name, 'i')},{"game_id":1,"game_name":1},function(err,data){
 		error_handle.post_error_handler(res, err, data);
-	});
+	});	
 	}
+}

@@ -24,9 +24,10 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use('/api', gamingSquareRoutes);
-//app.use(express.static(path.join(__dirname, 'qr_images/user')));
+app.use(express.static(path.join(__dirname, '/images')));
 //app.use(express.static(path.join(__dirname, 'qr_images/company')));
 // basic route (http://localhost:8080)
+//app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
     res.send("Api Works");
