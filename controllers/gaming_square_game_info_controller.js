@@ -31,7 +31,8 @@ exports.gamingSquareGameExtra = function(req, res){
 }
 
 exports.gamingSquareGameRatings = function(req, res){
-	GamingSquareGameInfo.findOne({"game_id":req.body.game_id},{"ratings":1,"_id":false},function(err, data){
+	console.log(req.body.game_id);
+	GamingSquareGameInfo.findOne({"game_id":req.body.game_id},{"ratings":1, "_id":false},function(err, data){
 		error_handle.post_error_handler(res, err, data);
 	});
 }

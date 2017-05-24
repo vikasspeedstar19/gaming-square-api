@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 
 exports.get_error_handler = function(res, err, data){
     if(!err){
-	res.send(data);	
+	res.json(data);	
 	}
 	else{
 	console.log(err);
@@ -16,6 +16,7 @@ exports.get_error_handler = function(res, err, data){
 
 exports.post_error_handler = function(res, err, data){
 	if(!err){
+	console.log("The data is : ",data);
 	res.json(data);
 	}
 	else{
