@@ -25,7 +25,7 @@ exports.gamingSquareGameStory = function(req, res){
 }
 
 exports.gamingSquareGameExtra = function(req, res){
-	GamingSquareGameInfo.findOne({"game_id":req.body.game_id},{"platforms":1,"_id":false},function(err, data){
+	GamingSquareGameInfo.findOne({"game_id":req.body.game_id},{"extra":1,"_id":false},function(err, data){
 		error_handle.post_error_handler(res, err, data);
 	});
 }
@@ -42,12 +42,3 @@ exports.gamingSquareGameScreenshots = function(req, res){
 		error_handle.post_error_handler(res, err, data);
 	});
 }
-
-/*
-app.post('/getgamingsquaregameinfoinfo',gamingSquareGameInfo.gamingSquareGameInfo);   DONE
-app.post('/getgamingsquaregameinfooverview',gamingSquareGameInfo.gamingSquareGameOverview);  DONE
-app.post('/getgamingsquaregameinfostory',gamingSquareGameInfo.gamingSquareGameStory); 
-app.post('/getgamingsquaregameinfoextra',gamingSquareGameInfo.gamingSquareGameExtra);
-app.post('/getgamingsquaregameinforatings',gamingSquareGameInfo.gamingSquareGameRatings);
-app.post('/getgamingsquaregameinfoscreenshots',gamingSquareGameInfo.gamingSquareGameScreenshots);
-*/

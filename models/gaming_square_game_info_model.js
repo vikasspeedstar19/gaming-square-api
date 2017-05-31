@@ -25,7 +25,10 @@ var gamingSquareGameInfo = new Schema({
     story    : { type : String, required : true },
     extra    : {
                     platforms : [{ type : String, required : true }],
-                    dlc : [{ type : String, required : true }]
+                    dlc : [{
+                           game_dlc_name:{ type : String, required : true },
+                           game_dlc_id:{ type : String, required : true }
+                          }]
                }
 });
 
