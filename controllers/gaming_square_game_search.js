@@ -16,7 +16,7 @@ exports.gamingSquareGameSearch = function(req, res){
 	}
 	else{
 	GamingSquareMainListModel.find({"game_name": new RegExp(req.body.game_name, 'i')},{"game_id":1,"game_name":1, "_id":false},function(err,data){
-		error_handle.post_error_handler(res, err, data);
+		error_handle.post_search_error_handler(res, err, data);
 	});	
 	}
 }

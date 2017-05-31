@@ -16,8 +16,7 @@ var gamingSquareGameInfo = new Schema({
                                             game_console:{ type : String, required : true },
                                             console_release_date:{ type : Date, required : true }
                                         }
-                                    ]
-                },
+                                    ]},
     overview : { type : String, required : true },
     ratings  : [{
         rating_name: { type : String, required : true },

@@ -24,3 +24,14 @@ exports.post_error_handler = function(res, err, data){
 	res.send("Error Occured");
 	}
 }
+
+exports.post_search_error_handler = function(res, err, data){
+	if(!err){
+		var result = { "search_results" : data };
+		res.json(result);
+	}
+	else{
+	console.log(err);
+	res.send("Error Occured");
+	}
+}
