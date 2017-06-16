@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "An api for Gaming Square project.",
   "main": "server.js",
-    "dependencies": {
+  "dependencies": {
     "@starefossen/express-cors": "^1.1.2",
     "base-64": "^0.1.0",
     "bcryptjs": "~2.4.0",
@@ -51,9 +51,12 @@
     "validator": "~6.2.0"
   },
   "scripts": {
-    "start":"node server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
 }

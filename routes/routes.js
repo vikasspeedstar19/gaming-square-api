@@ -4,6 +4,7 @@ var auth = require('../controllers/test.controller');
 var gamingSquareMainList = require('../controllers/gaming_square_main_list_controller');
 var gamingSquareSearchList = require('../controllers/gaming_square_game_search');
 var gamingSquareGameInfo = require('../controllers/gaming_square_game_info_controller');
+var gamingSquareGameDLCInfo = require('../controllers/gaming_square_game_dlc_info_controller');
 
 //gaming_square_game_search
 
@@ -27,5 +28,7 @@ app.post('/getgamingsquaregameinfostory',gamingSquareGameInfo.gamingSquareGameSt
 app.post('/getgamingsquaregameinfoextra',gamingSquareGameInfo.gamingSquareGameExtra);
 app.post('/getgamingsquaregameinforatings',gamingSquareGameInfo.gamingSquareGameRatings);
 app.post('/getgamingsquaregameinfoscreenshots',gamingSquareGameInfo.gamingSquareGameScreenshots);
+
+app.post('/getgamingsquaregamedlcinfo',gamingSquareGameDLCInfo.gamingSquareGameDLCInfo);
 
 module.exports = app;
